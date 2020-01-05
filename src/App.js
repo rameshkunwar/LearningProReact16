@@ -4,6 +4,8 @@ import "./App.css";
 import { CheckboxOperation } from "./Checkboxes";
 import { Display } from "./Display";
 import { ThemeButton } from "./ThemeButton";
+import Message from "./Message";
+import List from "./List";
 
 export default class App extends Component {
     constructor(props) {
@@ -29,7 +31,8 @@ export default class App extends Component {
         event.persist();
         this.setState(
             {
-                counter: this.state.counter + 1,
+                counter: 0,
+                //counter: this.state.counter + 1,
                 // theme: event.target.innerText === "Normal" ? "primary" : "danger"
                 theme: newTheme
             },
@@ -38,6 +41,10 @@ export default class App extends Component {
                     message: `${event.type} : ${this.state.counter}`
                 })
         );
+    };
+
+    incrementCounter = () => {
+        this.setState({ counter: this.state.counter + 1 });
     };
 
     selectTheme = (newTheme) => {
@@ -99,6 +106,21 @@ export default class App extends Component {
                                 callback={this.selectTheme}
                             />
                         </div>
+                    </div>
+                </div>
+                <div className="row p-2">
+                    <div className="col-6" style={{ border: "1px solid blue" }}>
+                        <Message
+                            message={`Counter: ${this.state.counter}`}
+                            callback={this.incrementCounter}
+                            text="Increment Counter"
+                        />
+                    </div>
+                    <div
+                        className="col-6"
+                        style={{ border: "1px solid green" }}
+                    >
+                        <List />
                     </div>
                 </div>
             </div>
