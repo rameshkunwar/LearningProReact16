@@ -6,10 +6,10 @@ import { Display } from "./Display";
 import { ThemeButton } from "./ThemeButton";
 import Message from "./Message";
 import List from "./List";
-
+import MyNavbar from "./Navbar";
 export default class App extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             formData: {},
             message: "Ready",
@@ -57,6 +57,9 @@ export default class App extends Component {
     render() {
         return (
             <div className="container-fluid">
+                <div className="my-navbar">
+                    <MyNavbar />
+                </div>
                 <div className="row p-2">
                     <div className="col-6">
                         <CheckboxOperation submit={this.submitData} />
