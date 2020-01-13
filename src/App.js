@@ -9,6 +9,7 @@ import List from "./components/List";
 import MyNavbar from "./Navbar";
 import ReduxList from "./components/List";
 import ReduxForm from "./components/Form";
+import Post from "./components/Post";
 export default class App extends Component {
   constructor() {
     super();
@@ -71,6 +72,10 @@ export default class App extends Component {
             <div>
               <h2>Add a new article</h2>
               <ReduxForm />
+            </div>
+            <div>
+              <h2>API Posts</h2>
+              <Post />
             </div>
           </div>
         </div>
