@@ -10,6 +10,7 @@ import MyNavbar from "./Navbar";
 import ReduxList from "./components/List";
 import ReduxForm from "./components/Form";
 import Post from "./components/Post";
+import CollapseNavBar from "./CollapseNavBarOnOverflow";
 export default class App extends Component {
   constructor() {
     super();
@@ -136,6 +137,9 @@ export default class App extends Component {
           <div className='col-6' style={{ border: "1px solid green" }}>
             <List />
           </div>
+        </div>
+        <div className='row m-3 w-100'>
+          <CollapseNavBar />
         </div>
       </div>
     );
